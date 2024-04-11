@@ -5,7 +5,6 @@ server:
   bpp_uri: https://mobility-staging.ondc.org/seller/
   protocol_server:
     uri: http://localhost:81/createPayload
-  
 security:
   subscriber_id: mock-api-service
 log:
@@ -15,29 +14,21 @@ log:
 
 path:
   getallstationcode:
-    # schema:
-    #   $ref: ./mobility/default/schema/search.yaml
     callbacks:
       $ref: ./mobility/getallstationcode.yaml
+
   getonestationcodetrips:
-    # schema:
-    #   $ref: ./mobility/default/schema/search.yaml
     callbacks:
       $ref: ./mobility/getonestationcodetrips.yaml
+      
   getfare:
-    # schema:
-    #   type: object
     callbacks:
       $ref: ./mobility/getfare.yaml
 
   confirmticket:
-    # schema:
-    #   $ref: ./mobility/default/schema/confirm.yaml
     callbacks:
       $ref: ./mobility/confirmticket.yaml
 
   status:
-    # schema:
-    #   $ref: ./mobility/default/schema/status.yaml
     callbacks:
       $ref: ./mobility/status.yaml
