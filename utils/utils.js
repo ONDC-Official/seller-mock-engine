@@ -42,50 +42,6 @@ const buildTemplate = (context, templateConfig) => {
   }
 };
 
-const extractSubscriberId = (header) => {
-  // Find the Authorization header
-  const authorizationHeader = header.authorization;
-  const regex = /keyId="([^"]+)"/;
-  const matches = regex.exec(authorizationHeader);
-  const keyID = matches[1];
-  if (keyID) {
-    // Split the header value using the delimiter '|'
-    const parts = keyID.split("|");
-
-    // Check if the parts array has at least two elements
-    if (parts.length >= 2) {
-      const subscriberID = parts[0];
-      const uniquePublicKeyID = parts[1];
-      // Return an object with both values
-      return { subscriberID, uniquePublicKeyID };
-    }
-  }
-  return null; // Subscriber ID not found
-};
-
-const getPublicKey = async (lookupUri, header) => {
-  try {
-    // let lookupUri = "https://preprod.registry.ondc.org/ondc/lookup";
-    const extractSubscriberIdukId = extractSubscriberId(header);
-    const subscriberId = extractSubscriberIdukId.subscriberID;
-    const ukId = extractSubscriberIdukId.uniquePublicKeyID;
-    let publicKey;
-    await axios
-      .post(lookupUri, {
-        subscriber_id: subscriberId,
-        ukId: ukId,
-      })
-      .then((response) => {
-        response = response.data;
-        publicKey = response[0]?.signing_public_key;
-      });
-
-    return publicKey;
-  } catch (error) {
-    console.trace(error);
-  }
-};
-
 const formatted_error = (errors) => {
   error_list = [];
   let status = "";
@@ -134,7 +90,6 @@ const dynamicReponse = (context) =>{
 module.exports = {
   resolveTemplate,
   buildTemplate,
-  getPublicKey,
   formatted_error,
   dynamicReponse
 };
