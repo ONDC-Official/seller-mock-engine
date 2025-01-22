@@ -38,7 +38,7 @@ function filterTransactionIdByFlow(){
 function getTransactionIdBySubscriberId(subscriberId:string){
   const keys = myCache.keys()
   return keys.filter((key: string)=>{
-    if(myCache.get(key).bap_id === subscriberId){
+    if(myCache.get(key).bap_id === subscriberId || myCache.get(key).bpp_id === subscriberId ){
       return key
     }
   })
