@@ -1,0 +1,15 @@
+settle: 
+  default:
+    config: settle
+
+report: 
+  default:
+    config: report
+
+recon: 
+  default:
+    config: recon
+
+on_recon: 
+  default:
+    config: on_recon

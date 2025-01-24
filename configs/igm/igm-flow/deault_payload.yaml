@@ -1,0 +1,28 @@
+on_issue:
+  message:
+  issue_id: collectorapp.com
+  issue_level: receiverapp.com
+  settlement:
+    type: NP-NP
+    id: settlement-id-abc
+    orders:
+    - id: ordr-123456
+      inter_participant:
+        settled_amount:
+          currency: INR
+          value: '1000.00'
+        amount:
+          currency: INR
+          value: '1000.12'
+        status: SETTLED
+        reference_no: '3245683618631'
+      collector:
+        amount:
+          currency: INR
+          value: '50.00'
+      self:
+        amount:
+          currency: INR
+          value: '50.00'
+        status: SETTLED
+        reference_no: '1238683618634'

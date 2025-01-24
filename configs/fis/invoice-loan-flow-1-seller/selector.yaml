@@ -1,0 +1,166 @@
+search:
+  default:
+    config: search
+  search2: 
+    config: search2
+    condition:
+      operation:
+        type: AND
+        input:
+          value:
+            - operation:
+                type: EQUAL
+                title: Check search message code
+                input:
+                  value:
+                    - operation:
+                        type: READ
+                        input:
+                          value: "req_body.message.intent.provider.items.0.xinput.form_response.status"
+                    - "SUCCESS"
+  search3: 
+    config: search3
+    condition:
+      operation:
+        type: AND
+        input:
+          value:
+            - operation:
+                type: EQUAL
+                title: Check search message code
+                input:
+                  value:
+                    - operation:
+                        type: READ
+                        input:
+                          value: "req_body.message.intent.provider.items.0.xinput.form_response.status"
+                    - "APPROVED"
+
+
+
+
+select:
+  default:
+    config: select2
+  select1: 
+    config: select
+    condition:
+      operation:
+        type: AND
+        input:
+          value:
+            - operation:
+                type: EQUAL
+                title: Check search message code
+                input:
+                  value:
+                    - operation:
+                        type: READ
+                        input:
+                          value: "req_body.message.order.items.0.xinput"
+                    - undefined
+
+init: 
+  default:
+    config: init
+  init2:
+    config: init2
+    condition:
+      operation:
+        type: AND
+        input:
+          value:
+            - operation:
+                type: EQUAL
+                title: Check search message code
+                input:
+                  value:
+                    - operation:
+                        type: READ
+                        input:
+                          value: "req_body.message.order.items.0.xinput.form.id"
+                    - F04
+  init3:
+    config: init3
+    condition:
+      operation:
+        type: AND
+        input:
+          value:
+            - operation:
+                type: EQUAL
+                title: Check search message code
+                input:
+                  value:
+                    - operation:
+                        type: READ
+                        input:
+                          value: "req_body.message.order.items.0.xinput.form.id"
+                    - FO5
+                    - F05
+  init4:
+    config: init4
+    condition:
+      operation:
+        type: AND
+        input:
+          value:
+            - operation:
+                type: EQUAL
+                title: Check search message code
+                input:
+                  value:
+                    - operation:
+                        type: READ
+                        input:
+                          value: "req_body.message.order.items.0.xinput.form.id"
+                    - FO6
+                    - F06
+
+confirm: 
+  default:
+    config: confirm
+
+
+update: 
+  default:
+    config: update
+  additional-flows:
+    config: update2
+    condition:
+      operation:
+        type: AND
+        input:
+          value:
+            - operation:
+                type: EQUAL
+                title: Check search message code
+                input:
+                  value:
+                    - operation:
+                        type: READ
+                        input:
+                          value: "req_body.message.order.payments.0.time.label"
+                    - FORECLOSURE
+                    - MISSED_EMI_PAYMENT
+                    - PRE_PART_PAYMENT
+
+status: 
+  default:
+    config: status
+
+form_submission_kyc_info:
+  default:
+    config: form_submission_kyc_info
+
+form_submission_gst_form:
+  default:
+    config: form_submission_gst_form
+
+form_submission_emandate_form:
+  default:
+    config: form_submission_emandate_form
+
+form_submission_loan-agreement_form:
+  default:
+    config: form_submission_loan-agreement_form

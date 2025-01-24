@@ -1,0 +1,20 @@
+issue: 
+  default:
+    config: issue
+
+session-builder:
+  default:
+    config: session-builder
+
+on_issue:
+  default:
+    config: on_issue
+
+issue2: 
+  default:
+    config: issue2
+
+on_issue2: 
+  default:
+    config: on_issue2
+

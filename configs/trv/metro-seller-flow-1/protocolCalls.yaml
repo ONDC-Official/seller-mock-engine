@@ -1,0 +1,205 @@
+
+search:
+  type: "search" # reqko send krte h 
+  target: "NP"
+  executed: false
+  shouldRender: true
+  config: "search" #name of the call
+  nextRequest: "on_search"
+  preRequest: search
+  isCollapsed: false
+  current: search
+
+
+on_search:
+  type: "on_search"
+  target: "NP"
+  executed: false
+  shouldRender: true
+  config: "on_search" #name of the call
+  nextRequest: "search2_station-code"
+  preRequest: search
+  isCollapsed: false
+  current: on_search
+  default_payload:
+    $ref: ./default_payload.yaml#/on_search
+
+
+
+search2_station-code:
+  type: "search" # reqko send krte h 
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "search2_station-code" #name of the call
+  nextRequest: "on_search2_station_code"
+  preRequest: on_search
+  isCollapsed: false
+  current: search2_station-code
+  isSkipable:
+   - condition: session.consentHandler === "false"
+     nextRequest: "search3"
+
+on_search2_station_code:
+  type: "on_search"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_search2_station_code" #name of the call
+  nextRequest: "select"
+  preRequest: search2_station-code
+  isCollapsed: false
+  current: on_search2
+  default_payload:
+    $ref: ./default_payload.yaml#/on_search2_station_code
+
+
+
+select:
+  type: "select" # reqko send krte h 
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "select" #name of the call
+  nextRequest: "on_select"
+  preRequest: on_search2_station_code
+  isCollapsed: false
+  current: select
+
+on_select:
+  type: "on_select"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_select" #name of the call
+  nextRequest: "init"
+  preRequest: select
+  isCollapsed: false
+  current: on_select
+  default_payload:
+    $ref: ./default_payload.yaml#/on_select
+
+init:
+  type: "init" # reqko send krte h 
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "init" #name of the call
+  nextRequest: "on_init"
+  preRequest: on_select
+  isCollapsed: false
+  current: init
+
+
+on_init:
+  type: "on_init"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_init" #name of the call
+  nextRequest: "confirm"
+  preRequest: init
+  isCollapsed: false
+  current: on_init
+  default_payload:
+    $ref: ./default_payload.yaml#/on_init
+
+confirm:
+  type: "confirm" # reqko send krte h 
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "confirm" #name of the call
+  nextRequest: "on_confirm"
+  preRequest: on_init2
+  isCollapsed: false
+  current: confirm
+
+on_confirm:
+  type: "on_confirm"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_confirm" #name of the call
+  nextRequest: "status"
+  preRequest: confirm
+  isCollapsed: false
+  current: on_confirm
+  default_payload:
+    $ref: ./default_payload.yaml#/on_confirm
+
+
+status:
+  type: "status" # reqko send krte h 
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "status" #name of the call
+  nextRequest: "on_status"
+  preRequest: on_confirm
+  isCollapsed: false
+  current: status
+
+on_status:
+  type: "on_status"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_status" #name of the call
+  nextRequest: "cancel"
+  preRequest: status
+  isCollapsed: false
+  current: on_status
+  default_payload:
+    $ref: ./default_payload.yaml#/on_status
+
+
+cancel:
+  type: "cancel" # reqko send krte h 
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "cancel" #name of the call
+  nextRequest: "on_cancel_soft"
+  preRequest: on_status
+  isCollapsed: false
+  current: cancel
+
+on_cancel_soft:
+  type: "on_cancel"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_cancel_soft" #name of the call
+  nextRequest: "cancel_confirm"
+  preRequest: cancel
+  isCollapsed: false
+  current: on_cancel_soft
+  default_payload:
+    $ref: ./default_payload.yaml#/on_cancel_soft
+
+cancel_confirm:
+  type: "cancel" # reqko send krte h 
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "cancel_confirm" #name of the call
+  nextRequest: "on_cancel_confirm"
+  preRequest: on_cancel_soft
+  isCollapsed: false
+  current: cancel_confirm
+
+on_cancel_confirm:
+  type: "on_cancel"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_cancel_confirm" #name of the call
+  nextRequest: "on_cancel_confirm"
+  preRequest: cancel_confirm
+  isCollapsed: false
+  current: on_cancel_confirm
+  default_payload:
+    $ref: ./default_payload.yaml#/on_cancel_confirm
+
+

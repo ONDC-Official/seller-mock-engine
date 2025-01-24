@@ -1,0 +1,632 @@
+on_search:
+  - name: "Item ID"
+    key: "itemid"
+    type: "select"
+    errorText: "Item id is required"
+    defaultValue: ITEM_ID_INVOICE_BASED_LOAN
+    defaultOptions:
+      - key: ITEM_ID_INVOICE_BASED_LOAN
+        value: ITEM_ID_INVOICE_BASED_LOAN
+
+    required: true
+    summary: This attribute is item id of the loan offer.
+  - name: "Item Info Tags"
+    key: "itemtags"
+    type: "multiline"
+    defaultValue:
+      INFO:
+        display: false
+        MIN_INTEREST_RATE: 9 %
+        MAX_INTEREST_RATE: 15 %
+        MIN_TENURE: PT5M
+        MAX_TENURE: PT5Y
+        MIN_LOAN_AMOUNT: 50000 INR
+        MAX_LOAN_AMOUNT: 5000000 INR
+    errorText: "Info tags are required"
+    required: true
+    summary: Describes item info tags
+  - name: "Consent handler"
+    key: "consentHandler"
+    type: "select"
+    defaultValue: "true"
+    defaultOptions:
+      - key: "true"
+        value: "true"
+      - key: "false"
+        value: "false"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to whether the consent handler is required or not.
+
+on_search2:
+
+
+on_search3:
+  - name: "Offer Item ID"
+    key: "offeritemid"
+    type: "text"
+    errorText: "Item id is required"
+    defaultValue: CHILD_ITEM_ID_INVOICE_LOAN
+    required: true
+    summary: This attribute is offered item id of the loan offer.
+  - name: "Parent Item ID"
+    key: "Parentitemid"
+    type: "select"
+    errorText: "Parent id is required"
+    defaultValue: ITEM_ID_INVOICE_LOAN
+    required: true
+    defaultOptions:
+      - key: "ITEM_ID_INVOICE_LOAN"
+        value: "ITEM_ID_INVOICE_LOAN"
+    summary: This attribute refers to parent item id.
+
+ 
+  - key: "ITEM_ID_INVOICE_LOAN"
+    value: "ITEM_ID_INVOICE_LOAN"
+    summary: This attribute is offered item id of the loan offer.
+  - name: "Offer price"
+    key: "offerpricevalue"
+    type: "text"
+    errorText: "price is required"
+    defaultValue: "441800"
+    required: true
+    summary: This attribute is offered price of the offer.
+  - name: "Item Info Tags"
+    key: "offertags"
+    type: "multiline"
+    defaultValue:
+        INFO:
+          display: false
+          INTEREST_RATE: 12%
+          TERM: 5 months
+          INTEREST_RATE_TYPE: FIXED
+          APPLICATION_FEE: 1000 INR
+          FORECLOSURE_FEE: 0.5%
+          INTEREST_RATE_CONVERSION_CHARGE: NA
+          DELAY_PENALTY_FEE: 5%
+          OTHER_PENALTY_FEE: 1% 
+          TNC_LINK: https://icicibank.com/loan/tnc.html
+          PRINCIPAL: '400000'
+          INTEREST: '40000'
+          PROCESSING_FEE: '1800'
+          OTHER_CHARGES: '0'
+          OFFER_VALIDITY: PT15D
+          INVOICE_NUMBER: INV-24-04-009
+    errorText: "Info tags are required"
+    required: true
+    summary: Describes item info tags
+
+on_status_kyc_info_selector:
+  - name: "Form Approval"
+    key: "approval"
+    type: "select"
+    defaultValue: "approve"
+    defaultOptions:
+      - key: "approve"
+        value: "approve"
+      - key: "reject"
+        value: "reject"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to whether kyc is accepted or not.
+ 
+on_status_loan-agreement_form_selector:
+  - name: "Form Approval"
+    key: "approval"
+    type: "select"
+    defaultValue: "approve"
+    defaultOptions:
+      - key: "approve"
+        value: "approve"
+      - key: "reject"
+        value: "reject"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to whether kyc is accepted or not.
+
+flow-selector:
+  - name: "Flow Selector"
+    key: "update_condition"
+    type: "select"
+    defaultValue: "Disburse-Amount"
+    defaultOptions:
+      - key: "FORECLOSURE"
+        value: "FORECLOSURE"
+      - key: "MISSED_EMI_PAYMENT"
+        value: "MISSED_EMI_PAYMENT"
+      - key: "PRE_PART_PAYMENT"
+        value: "PRE_PART_PAYMENT"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to whether kyc is accepted or not.
+
+on_select:
+  # - name: " Item ID"
+  #   key: "itemid"
+  #   type: "select"
+  #   errorText: "Parent id is required"
+  #   extractionPath: "businessPayload[].message.order.items[]{key: id, value: id}"
+  #   required: true
+  #   summary: This attribute is offered item id of the loan offer.
+
+on_select2:
+  # - name: " Item ID"
+  #   key: "itemid"
+  #   type: "select"
+  #   errorText: "Parent id is required"
+  #   extractionPath: "businessPayload[].message.order.items[]{key: id, value: id}"
+  #   required: true
+  #   summary: This attribute is offered item id of the loan offer.
+
+on_init:
+  # - name: " Item ID"
+  #   key: "itemid"
+  #   type: "select"
+  #   errorText: "Parent id is required"
+  #   extractionPath: "businessPayload[].message.order.items[]{key: id, value: id}"
+  #   required: true
+  #   summary: This attribute is offered item id of the loan offer.
+
+
+on_init2:
+  # - name: " Item ID"
+  #   key: "itemid"
+  #   type: "select"
+  #   errorText: "Parent id is required"
+  #   extractionPath: "businessPayload[].message.order.items[]{key: id, value: id}"
+  #   required: true
+  #   summary: This attribute is offered item id of the loan offer.
+
+on_status_gst_form_selector:
+  - name: "Form Approval"
+    key: "approval"
+    type: "select"
+    defaultValue: "approve"
+    defaultOptions:
+      - key: "approve"
+        value: "approve"
+      - key: "reject"
+        value: "reject"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to whether kyc is accepted or not.
+
+on_init3:
+  # - name: " Item ID"
+  #   key: "itemid"
+  #   type: "select"
+  #   errorText: "Parent id is required"
+  #   extractionPath: "businessPayload[].message.order.items[]{key: id, value: id}"
+  #   required: true
+  #   summary: This attribute is offered item id of the loan offer.
+
+on_status_emandate_form_selector:
+  - name: "Form Approval"
+    key: "approval"
+    type: "select"
+    defaultValue: "approve"
+    defaultOptions:
+      - key: "approve"
+        value: "approve"
+      - key: "reject"
+        value: "reject"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to whether kyc is accepted or not.
+
+on_init4:
+
+
+on_confirm:
+
+on_update:
+
+
+on_status:
+  # - name: " Item ID"
+  #   key: "itemid"
+  #   type: "select"
+  #   errorText: "Parent id is required"
+  #   extractionPath: "businessPayload[].message.order.items[]{key: id, value: id}"
+  #   required: true
+  #   summary: This attribute is offered item id of the loan offer.
+
+
+
+
+  # - name: "Loan Category"
+  #   key: "loanCategaory"
+  #   type: "text"
+  #   errorText: "Vehicle category is required"
+  #   defaultValue: INVOICE_BASED_LOAN
+  #   required: true
+  #   summary: This attribute refers to categorizing loans based on whether they are intended for personal use or are meant for invoices.
+ 
+  # - name: "Payment Tags"
+  #   key: "paymentTagsSearch"
+  #   type: "multiline"
+  #   defaultValue:
+  #     BUYER_FINDER_FEES:
+  #       display: false
+  #       BUYER_FINDER_FEES_TYPE: percent-annualized
+  #       BUYER_FINDER_FEES_PERCENTAGE: "1"
+  #     SETTLEMENT_TERMS:
+  #       display: false
+  #       DELAY_INTEREST: 2.5
+  #       STATIC_TERMS: "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+  #       OFFLINE_CONTRACT: "true"
+  #   errorText: "Payment tags is required"
+  #   required: true
+  #   summary: Describes tags
+
+# personal_info_form:
+#   - name: "BPP URI"
+#     key: "bpp_uri"
+#     type: "select"
+#     extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')]{key: bpp_uri, value: bpp_uri}"
+#     extractionPathReplace: "${bpp_id}"
+#     extractionPathReplaceWith: data.session.bpp_id
+#     errorText: "BPP URI is required"
+#     required: true
+#     summary: The subscriber URL of the Seller App (BPP) is the endpoint that accepts callbacks from the Buyer App (BAP).
+#   # - name: "BPP ID"
+#   #   key: "bpp_id"
+#   #   type: "select"
+#   #   extractionPath: "businessPayload[]{key: bpp_id, value: bpp_id}"
+#   #   errorText: "BPP ID is required"
+#   #   required: true
+#   #   summary: It explains the Explains the subscriber of the Seller App (BPP).
+#   - name: Form Url
+#     key: personalFormUrl
+#     type: "form"
+#     extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: formUrl, value: formUrl}"
+#     extractionPathReplace: "${bpp_id}"
+#     extractionPathReplaceWith: data.session.bpp_id
+#     submissionIdFieldKey: personalInfoSubmissionId
+#     summary: Need to be filled to get the submission id
+#   - name: "ProviderId"
+#     key: "providerId"
+#     type: "select"
+#     extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: providerId, value: providerId}"
+#     extractionPathReplace: "${bpp_id}"
+#     extractionPathReplaceWith: data.session.bpp_id
+#     errorText: "Provider Id is required"
+#     required: true
+#     summary: This refers to the unique id of the provider whose catalog items have been selected.
+#   - name: "Form Id"
+#     key: "formId"
+#     type: "select"
+#     extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: id, value: id}"
+#     extractionPathReplace: "${bpp_id}"
+#     extractionPathReplaceWith: data.session.bpp_id
+#     errorText: "Form Id is required"
+#     required: true
+#     summary: Provider Id is the uniqure id of the seller
+#   - name: "Item Id"
+#     key: "itemId"
+#     type: "select"
+#     extractionPath: "businessPayload[?(bpp_id === '${bpp_id}')].formData[]{key: itemId, value: itemId}"
+#     extractionPathReplace: "${bpp_id}"
+#     extractionPathReplaceWith: data.session.bpp_id
+#     errorText: "item Id is required"
+#     required: true
+#     summary: Provider Id is the uniqure id of the seller
+
+# search_1:
+#   - name: Submission ID
+#     key: personalInfoSubmissionId
+#     type: "text"
+#     errorText: "Submission Id is required"
+#     required: true
+#     summary: Submission Id revieved after form submission
+
+# search_2:
+#   - name: "Consent Status"
+#     key: "consentStatus"
+#     type: "select"
+#     defaultValue: "APPROVED"
+#     defaultOptions:
+#       - key: "APPROVED"
+#         value: "APPROVED"
+#     errorText: "Please select a field"
+#     required: true
+#     summary: Submission Id revieved after form submission
+
+# select:
+#   - name: "Parent Id"
+#     key: "parentItemId"
+#     type: "select"
+#     extractionPath: "businessPayload[].itemDetails[]{key: parentItemId, value: parentItemId}"
+#     errorText: "Form Id is required"
+#     required: true
+#     summary: Parent Id is the uniqure id of the seller
+#   - name: "Item Id"
+#     key: "selectItemID"
+#     type: "select"
+#     extractionPath: "businessPayload[].itemDetails[]{key: itemID, value: itemID}"
+#     errorText: "Form Id is required"
+#     required: true
+#     summary: Item Id is the uniqure id of the seller
+
+# loan_amount_adjust_form:
+#   - name: Form Url
+#     key: adjustAmountFormUrl
+#     type: "form"
+#     extractionPath: "businessPayload[].formData[]{key: formUrl, value: formUrl}"
+#     submissionIdFieldKey: adjustAmountSubmissionId
+#     summary: Need to be filled to get the submission id
+#   - name: "Form Id"
+#     key: "formIdAmountAdjustForm"
+#     type: "select"
+#     extractionPath: "businessPayload[].formData[]{key: id, value: id}"
+#     errorText: "Form Id is required"
+#     required: true
+#     summary: Provider Id is the uniqure id of the seller
+
+# select_1:
+#   - name: Submission ID
+#     key: adjustAmountSubmissionId
+#     type: "text"
+#     errorText: "Submission Id is required"
+#     required: true
+#     summary: Submission Id revieved after form submission
+
+# customer_info_form:
+#   - name: Form Url
+#     key: customerInfoFormUrl
+#     type: "form"
+#     extractionPath: "businessPayload[].formData[]{key: formUrl, value: formUrl}"
+#     summary: Need to be filled to get the submission id
+#   - name: "Form Id"
+#     key: "customerInfoFormId"
+#     type: "select"
+#     extractionPath: "businessPayload[].formData[]{key: id, value: id}"
+#     errorText: "Form Id is required"
+#     required: true
+#     summary: Provider Id is the uniqure id of the seller
+
+# init:
+#   - name: Submission ID
+#     key: customerInfoSubmissionId
+#     type: "text"
+#     errorText: "Submission Id is required"
+#     required: true
+#     summary: Submission Id revieved after form submission
+#   - name: "Payment Status"
+#     key: "paymentStatus"
+#     type: "select"
+#     defaultValue: "NOT-PAID"
+#     defaultOptions:
+#       - key: "PAID"
+#         value: "PAID"
+#       - key: "NOT-PAID"
+#         value: "NOT-PAID"
+#     errorText: "Please select a field"
+#     required: true
+#     summary: Starting stop of the journey location
+#   - name: "Payment Type"
+#     key: "paymentType"
+#     type: "select"
+#     defaultValue: "PRE-ORDER"
+#     defaultOptions:
+#       - key: "PRE-ORDER"
+#         value: "PRE-ORDER"
+#       - key: "PRE-FULFILLMENT"
+#         value: "PRE-FULFILLMENT"
+#       - key: "ON-FULFILLMENT"
+#         value: "ON-FULFILLMENT"
+#       - key: "POST-FULFILLMENT"
+#         value: "POST-FULFILLMENT"
+#       - key: "ON-ORDER"
+#         value: "ON-ORDER"
+#     errorText: "Please select a field"
+#     required: true
+#     summary: Starting stop of the journey location
+#   - name: "Payment Tags"
+#     key: "paymentTagsInit"
+#     type: "multiline"
+#     defaultValue:
+#       BUYER_FINDER_FEES:
+#         display: false
+#         BUYER_FINDER_FEES_TYPE: percent-annualized
+#         BUYER_FINDER_FEES_PERCENTAGE: "1"
+#       SETTLEMENT_TERMS:
+#         display: false
+#         SETTLEMENT_TYPE: "neft"
+#         DELAY_INTEREST: "5"
+#         STATIC_TERMS: "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+#         SETTLEMENT_AMOUNT: "12312"
+#         OFFLINE_CONTRACT: "true"
+#     errorText: "Payment Tags is required"
+#     required: true
+#     summary: Starting stop of the journey location
+
+# kyc_form:
+#   - name: Form Url
+#     key: kycFormUrl
+#     type: "form"
+#     extractionPath: "businessPayload[].formData[]{key: formUrl, value: formUrl}"
+#     summary: Need to be filled to get the submission id
+#   - name: "Form Id"
+#     key: "kycFormId"
+#     type: "select"
+#     extractionPath: "businessPayload[].formData[]{key: id, value: id}"
+#     errorText: "Form Id is required"
+#     required: true
+#     summary: Provider Id is the uniqure id of the seller
+
+# init_1:
+#   - name: Submission ID
+#     key: kycSubmissionId
+#     type: "text"
+#     errorText: "Submission Id is required"
+#     required: true
+#     summary: Submission Id revieved after form submission
+#   - name: "Payment Status"
+#     key: "paymentStatusInit1"
+#     type: "select"
+#     defaultValue: "NOT-PAID"
+#     defaultOptions:
+#       - key: "PAID"
+#         value: "PAID"
+#       - key: "NOT-PAID"
+#         value: "NOT-PAID"
+#     errorText: "Please select a field"
+#     required: true
+#     summary: Starting stop of the journey location
+#   - name: "Payment Type"
+#     key: "paymentType"
+#     type: "select"
+#     defaultValue: "PRE-ORDER"
+#     defaultOptions:
+#       - key: "PRE-ORDER"
+#         value: "PRE-ORDER"
+#       - key: "PRE-FULFILLMENT"
+#         value: "PRE-FULFILLMENT"
+#       - key: "ON-FULFILLMENT"
+#         value: "ON-FULFILLMENT"
+#       - key: "POST-FULFILLMENT"
+#         value: "POST-FULFILLMENT"
+#       - key: "ON-ORDER"
+#         value: "ON-ORDER"
+#     errorText: "Please select a field"
+#     required: true
+#     summary: Starting stop of the journey location
+#   - name: "Payment Tags"
+#     key: "paymentTagsInit"
+#     type: "multiline"
+#     defaultValue:
+#       BUYER_FINDER_FEES:
+#         display: false
+#         BUYER_FINDER_FEES_TYPE: percent-annualized
+#         BUYER_FINDER_FEES_PERCENTAGE: "1"
+#       SETTLEMENT_TERMS:
+#         display: false
+#         DELAY_INTEREST: 2.5
+#         STATIC_TERMS: "https://bap.credit.becknprotocol.io/personal-banking/loans/personal-loan"
+#     errorText: "Payment Tags is required"
+#     required: true
+#     summary: Starting stop of the journey location
+
+# account_details_form:
+#   - name: Form Url
+#     key: accointDetailsFormUrl
+#     type: "form"
+#     extractionPath: "businessPayload[].formData[]{key: formUrl, value: formUrl}"
+#     submissionIdFieldKey: accointDetailsFormSubmissionId
+#     summary: Need to be filled to get the submission id
+#   - name: "Form Id"
+#     key: "accointDetailsFormId"
+#     type: "select"
+#     extractionPath: "businessPayload[].formData[]{key: id, value: id}"
+#     errorText: "Form Id is required"
+#     required: true
+#     summary: Provider Id is the uniqure id of the seller
+
+# init_2:
+#   - name: Submission ID
+#     key: accointDetailsFormSubmissionId
+#     type: "text"
+#     errorText: "Submission Id is required"
+#     required: true
+#     summary: Submission Id revieved after form submission
+
+# e_mandate_details_form:
+#   - name: Form Url
+#     key: eMandateDetailsFormUrl
+#     type: "form"
+#     extractionPath: "businessPayload[].formData[]{key: formUrl, value: formUrl}"
+#     summary: Need to be filled to get the submission id
+#   - name: "Form Id"
+#     key: "eMandateDetailsFormId"
+#     type: "select"
+#     extractionPath: "businessPayload[].formData[]{key: id, value: id}"
+#     errorText: "Form Id is required"
+#     required: true
+#     summary: Provider Id is the uniqure id of the seller
+
+# init_3:
+#   - name: Submission ID
+#     key: eMandateDetailsSubmissionId
+#     type: "text"
+#     errorText: "Submission Id is required"
+#     required: true
+#     summary: Submission Id revieved after form submission
+
+# loan_agreement_form:
+#   - name: Form Url
+#     key: loanAgreementFormUrl
+#     type: "form"
+#     extractionPath: "businessPayload[].formData[]{key: formUrl, value: formUrl}"
+#     summary: Need to be filled to get the submission id
+#   - name: "Form Id"
+#     key: "loanAgreementFormId"
+#     type: "select"
+#     extractionPath: "businessPayload[].formData[]{key: id, value: id}"
+#     errorText: "Form Id is required"
+#     required: true
+#     summary: Provider Id is the uniqure id of the seller
+
+# confirm:
+#   - name: Submission ID
+#     key: loanAgreementSubmissionId
+#     type: "text"
+#     errorText: "Submission Id is required"
+#     required: true
+#     summary: Submission Id revieved after form submission
+#   - name: "Payment Status"
+#     key: "paymentStatusConfirm"
+#     type: "select"
+#     defaultValue: "PAID"
+#     defaultOptions:
+#       - key: "PAID"
+#         value: "PAID"
+#       - key: "NOT-PAID"
+#         value: "NOT-PAID"
+#     errorText: "Please select a field"
+#     required: true
+#     summary: Starting stop of the journey location
+#   - name: "Payment Type"
+#     key: "paymentTypeConfirm"
+#     type: "select"
+#     defaultValue: "PRE-ORDER"
+#     defaultOptions:
+#       - key: "PRE-ORDER"
+#         value: "PRE-ORDER"
+#       - key: "PRE-FULFILLMENT"
+#         value: "PRE-FULFILLMENT"
+#       - key: "ON-FULFILLMENT"
+#         value: "ON-FULFILLMENT"
+#       - key: "POST-FULFILLMENT"
+#         value: "POST-FULFILLMENT"
+#       - key: "ON-ORDER"
+#         value: "ON-ORDER"
+#     errorText: "Please select a field"
+#     required: true
+#     summary: Starting stop of the journey location
+
+# update:
+#   - name: Order Id
+#     key: orderId
+#     type: "text"
+#     errorText: "Order Id is required"
+#     required: true
+#     summary: Order Id revieved after form submission
+#   - name: Order status
+#     key: fulfillmentStatus
+#     type: "select"
+#     defaultValue: "APPROVED"
+#     defaultOptions:
+#       - key: "APPROVED"
+#         value: "APPROVED"
+#     errorText: "Please select a field"
+#     required: true
+#     summary: Order status is the status of fulfillment
+
+# status:
+#   - name: Order Id
+#     key: orderId
+#     type: "text"
+#     errorText: "Order Id is required"
+#     required: true
+#     summary: Order Id revieved after form submission

@@ -1,0 +1,1086 @@
+on_issue:
+  - name: "action_id"
+    key: "id"
+    type: "text"
+    defaultValue: "0"
+  
+    # defaultOptions:
+    #   - key: "PROCESSING"
+    #     value: "PROCESSING"
+    #   - key: "OPEN"
+    #     value: "OPEN"
+
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to id of the action.
+
+  - name: "status"
+    key: "status"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "CLOSED"
+        value: "CLOSED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+      
+
+    errorText: "Please select a field"
+    required: false
+    summary: This attribute refers to status of the settlement.
+  
+  # OPEN,PROCESSING,INFO_REQUESTED,INFO_PROVIDED, RESOLVED
+  - name: "description_code"
+    key: "actions_description.code"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "INFO_REQUESTED"
+        value: "INFO_REQUESTED"
+      - key: "INFO_PROVIDED"
+        value: "INFO_PROVIDED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute is description_code.
+
+  - name: "short_desc"
+    key: "actions_description.short_desc"
+    type: "text"
+    errorText: "short_desc is required"
+    defaultValue: "OPEN"
+    required: true
+    summary: This attribute is short_desc.
+  
+  - name: "action_by"
+    key: "action_by"
+
+    
+    defaultValue: "NP1"
+    required: true
+    summary: This attribute is Action_by.
+  
+  - name: "actor_name"
+    key: "actor_detail.name"
+    type: "text"
+    defaultValue: "Sam Manuel"
+    required: false
+    summary: This attribute is Actor_Name.
+  
+  - name: "send_resolution"
+    key: "send_resolution"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "Proposed"
+        value: "proposed"
+      - key: "Replacement"
+        value: "replacement"
+      - key: "Refund"
+        value: "refund"
+      - key: "false"
+        value: false
+    
+  - name: "info_requested_code"
+    key: "actions_description.name"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "INFO0001"
+        value: "INFO0001"
+      - key: "INFO0002"
+        value: "INFO0002"
+      - key: "INFO0003"
+        value: "INFO0003"
+      - key: "false"
+        value: false
+
+on_issue2:
+  - name: "action_id"
+    key: "id"
+    type: "text"
+    defaultValue: "0"
+  
+    # defaultOptions:
+    #   - key: "PROCESSING"
+    #     value: "PROCESSING"
+    #   - key: "OPEN"
+    #     value: "OPEN"
+
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to id of the action.
+
+  - name: "status"
+    key: "status"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "CLOSED"
+        value: "CLOSED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+      
+
+    errorText: "Please select a field"
+    required: false
+    summary: This attribute refers to status of the settlement.
+  
+  # OPEN,PROCESSING,INFO_REQUESTED,INFO_PROVIDED, RESOLVED
+  - name: "description_code"
+    key: "actions_description.code"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "INFO_REQUESTED"
+        value: "INFO_REQUESTED"
+      - key: "INFO_PROVIDED"
+        value: "INFO_PROVIDED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute is description_code.
+
+  - name: "short_desc"
+    key: "actions_description.short_desc"
+    type: "text"
+    errorText: "short_desc is required"
+    defaultValue: "OPEN"
+    required: true
+    summary: This attribute is short_desc.
+  
+  - name: "action_by"
+    key: "action_by"
+    
+    defaultValue: "NP1"
+    required: true
+    summary: This attribute is Action_by.
+  
+  - name: "actor_name"
+    key: "actor_detail.name"
+    type: "text"
+    
+    defaultValue: "Sam Manuel"
+    required: false
+    summary: This attribute is Actor_Name.
+
+  - name: "send_resolution"
+    key: "send_resolution"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "Proposed"
+        value: "proposed"
+      - key: "Replacement"
+        value: "replacement"
+      - key: "Refund"
+        value: "refund"
+      - key: "false"
+        value: false
+
+  - name: "info_requested_code"
+    key: "actions_description.name"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "INFO0001"
+        value: "INFO0001"
+      - key: "INFO0002"
+        value: "INFO0002"
+      - key: "INFO0003"
+        value: "INFO0003"
+      - key: "false"
+        value: false
+   
+on_issue3:
+  - name: "action_id"
+    key: "id"
+    type: "text"
+    defaultValue: "0"
+  
+    # defaultOptions:
+    #   - key: "PROCESSING"
+    #     value: "PROCESSING"
+    #   - key: "OPEN"
+    #     value: "OPEN"
+
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to id of the action.
+
+  - name: "status"
+    key: "status"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "CLOSED"
+        value: "CLOSED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+      
+
+    errorText: "Please select a field"
+    required: false
+    summary: This attribute refers to status of the settlement.
+  
+  # OPEN,PROCESSING,INFO_REQUESTED,INFO_PROVIDED, RESOLVED
+
+  - name: "short_desc"
+    key: "actions_description.short_desc"
+    type: "text"
+    errorText: "short_desc is required"
+    defaultValue: "OPEN"
+    required: true
+    summary: This attribute is short_desc.
+
+  - name: "description_code"
+    key: "actions_description.code"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "INFO_REQUESTED"
+        value: "info_code"
+      - key: "INFO_PROVIDED"
+        value: "INFO_PROVIDED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute is description_code.
+  
+  - name: "action_by"
+    key: "action_by"
+   
+    
+    defaultValue: "NP1"
+    required: true
+    summary: This attribute is Action_by.
+  
+  - name: "actor_name"
+    key: "actor_detail.name"
+    type: "text"
+    
+    defaultValue: "Sam Manuel"
+    required: false
+    summary: This attribute is Actor_Name.
+
+  - name: "send_resolution"
+    key: "send_resolution"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "Proposed"
+        value: "proposed"
+      - key: "Replacement"
+        value: "replacement"
+      - key: "Refund"
+        value: "refund"
+      - key: "false"
+        value: false
+
+  - name: "info_requested_code"
+    key: "actions_description.name"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "INFO0001"
+        value: "INFO0001"
+      - key: "INFO0002"
+        value: "INFO0002"
+      - key: "INFO0003"
+        value: "INFO0003"
+      - key: "false"
+        value: false
+
+on_issue4:
+  - name: "action_id"
+    key: "id"
+    type: "text"
+    defaultValue: "0"
+  
+    # defaultOptions:
+    #   - key: "PROCESSING"
+    #     value: "PROCESSING"
+    #   - key: "OPEN"
+    #     value: "OPEN"
+
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to id of the action.
+
+  - name: "status"
+    key: "status"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "CLOSED"
+        value: "CLOSED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+      
+
+    errorText: "Please select a field"
+    required: false
+    summary: This attribute refers to status of the settlement.
+  
+  # OPEN,PROCESSING,INFO_REQUESTED,INFO_PROVIDED, RESOLVED
+  - name: "description_code"
+    key: "actions_description.code"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "INFO_REQUESTED"
+        value: "INFO_REQUESTED"
+      - key: "INFO_PROVIDED"
+        value: "INFO_PROVIDED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute is description_code.
+
+  - name: "short_desc"
+    key: "actions_description.short_desc"
+    type: "text"
+    errorText: "short_desc is required"
+    defaultValue: "OPEN"
+    required: true
+    summary: This attribute is short_desc.
+  
+  - name: "action_by"
+    key: "action_by"
+    
+    defaultValue: "NP1"
+    required: true
+    summary: This attribute is Action_by.
+  
+  - name: "actor_name"
+    key: "actor_detail.name"
+    type: "text"
+    
+    defaultValue: "Sam Manuel"
+    required: false
+    summary: This attribute is Actor_Name.
+  
+  - name: "send_resolution"
+    key: "send_resolution"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "Proposed"
+        value: "proposed"
+      - key: "Replacement"
+        value: "replacement"
+      - key: "Refund"
+        value: "refund"
+      - key: "false"
+        value: false
+
+  - name: "info_requested_code"
+    key: "actions_description.name"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "INFO0001"
+        value: "INFO0001"
+      - key: "INFO0002"
+        value: "INFO0002"
+      - key: "INFO0003"
+        value: "INFO0003"
+      - key: "false"
+        value: false
+
+on_issue5:
+  - name: "action_id"
+    key: "id"
+    type: "text"
+    defaultValue: "0"
+  
+    # defaultOptions:
+    #   - key: "PROCESSING"
+    #     value: "PROCESSING"
+    #   - key: "OPEN"
+    #     value: "OPEN"
+
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to id of the action.
+
+  - name: "status"
+    key: "status"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "CLOSED"
+        value: "CLOSED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+      
+
+    errorText: "Please select a field"
+    required: false
+    summary: This attribute refers to status of the settlement.
+  
+  # OPEN,PROCESSING,INFO_REQUESTED,INFO_PROVIDED, RESOLVED
+  - name: "description_code"
+    key: "actions_description.code"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "INFO_REQUESTED"
+        value: "INFO_REQUESTED"
+      - key: "INFO_PROVIDED"
+        value: "INFO_PROVIDED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute is description_code.
+
+  - name: "short_desc"
+    key: "actions_description.short_desc"
+    type: "text"
+    errorText: "short_desc is required"
+    defaultValue: "OPEN"
+    required: true
+    summary: This attribute is short_desc.
+  
+  - name: "action_by"
+    key: "action_by"
+
+    
+    defaultValue: "NP1"
+    required: true
+    summary: This attribute is Action_by.
+  
+  - name: "actor_name"
+    key: "actor_detail.name"
+    type: "text"
+    
+    defaultValue: "Sam Manuel"
+    required: false
+    summary: This attribute is Actor_Name.
+  
+  - name: "send_resolution"
+    key: "send_resolution"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "Proposed"
+        value: "proposed"
+      - key: "Replacement"
+        value: "replacement"
+      - key: "Refund"
+        value: "refund"
+      - key: "false"
+        value: false
+
+  - name: "info_requested_code"
+    key: "actions_description.name"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "INFO0001"
+        value: "INFO0001"
+      - key: "INFO0002"
+        value: "INFO0002"
+      - key: "INFO0003"
+        value: "INFO0003"
+      - key: "false"
+        value: false
+
+on_issue6:
+  - name: "action_id"
+    key: "id"
+    type: "text"
+    defaultValue: "0"
+  
+    # defaultOptions:
+    #   - key: "PROCESSING"
+    #     value: "PROCESSING"
+    #   - key: "OPEN"
+    #     value: "OPEN"
+
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to id of the action.
+
+  - name: "status"
+    key: "status"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "CLOSED"
+        value: "CLOSED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+      
+
+    errorText: "Please select a field"
+    required: false
+    summary: This attribute refers to status of the settlement.
+  
+  # OPEN,PROCESSING,INFO_REQUESTED,INFO_PROVIDED, RESOLVED
+  - name: "description_code"
+    key: "actions_description.code"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "INFO_REQUESTED"
+        value: "INFO_REQUESTED"
+      - key: "INFO_PROVIDED"
+        value: "INFO_PROVIDED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute is description_code.
+
+  - name: "short_desc"
+    key: "actions_description.short_desc"
+    type: "text"
+    errorText: "short_desc is required"
+    defaultValue: "OPEN"
+    required: true
+    summary: This attribute is short_desc.
+  
+  - name: "action_by"
+    key: "action_by"
+    
+    defaultValue: "NP1"
+    required: true
+    summary: This attribute is Action_by.
+  
+  - name: "actor_name"
+    key: "actor_name"
+    type: "text"
+    
+    defaultValue: "Sam Manuel"
+    required: false
+    summary: This attribute is Actor_Name.
+
+  - name: "send_resolution"
+    key: "send_resolution"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "Proposed"
+        value: "proposed"
+      - key: "Replacement"
+        value: "replacement"
+      - key: "Refund"
+        value: "refund"
+      - key: "false"
+        value: false
+  
+  - name: "info_requested_code"
+    key: "actions_description.name"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "INFO0001"
+        value: "INFO0001"
+      - key: "INFO0002"
+        value: "INFO0002"
+      - key: "INFO0003"
+        value: "INFO0003"
+      - key: "false"
+        value: false
+
+on_issue7:
+  - name: "action_id"
+    key: "id"
+    type: "text"
+    defaultValue: "0"
+  
+    # defaultOptions:
+    #   - key: "PROCESSING"
+    #     value: "PROCESSING"
+    #   - key: "OPEN"
+    #     value: "OPEN"
+
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to id of the action.
+
+  - name: "status"
+    key: "status"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "CLOSED"
+        value: "CLOSED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+      
+
+    errorText: "Please select a field"
+    required: false
+    summary: This attribute refers to status of the settlement.
+  
+  # OPEN,PROCESSING,INFO_REQUESTED,INFO_PROVIDED, RESOLVED
+  - name: "description_code"
+    key: "actions_description.code"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "INFO_REQUESTED"
+        value: "INFO_REQUESTED"
+      - key: "INFO_PROVIDED"
+        value: "INFO_PROVIDED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute is description_code.
+
+  - name: "short_desc"
+    key: "actions_description.short_desc"
+    type: "text"
+    errorText: "short_desc is required"
+    defaultValue: "OPEN"
+    required: true
+    summary: This attribute is short_desc.
+  
+  - name: "action_by"
+    key: "action_by"
+
+    
+    defaultValue: "NP1"
+    required: true
+    summary: This attribute is Action_by.
+  
+  - name: "actor_name"
+    key: "actor_detail.name"
+    type: "text"
+    
+    defaultValue: "Sam Manuel"
+    required: false
+    summary: This attribute is Actor_Name.
+
+  - name: "send_resolution"
+    key: "send_resolution"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "Proposed"
+        value: "proposed"
+      - key: "Replacement"
+        value: "replacement"
+      - key: "Refund"
+        value: "refund"
+      - key: "false"
+        value: false
+
+  - name: "info_requested_code"
+    key: "actions_description.name"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "INFO0001"
+        value: "INFO0001"
+      - key: "INFO0002"
+        value: "INFO0002"
+      - key: "INFO0003"
+        value: "INFO0003"
+      - key: "false"
+        value: false
+
+on_issue8:
+  - name: "action_id"
+    key: "id"
+    type: "text"
+    defaultValue: "0"
+  
+    # defaultOptions:
+    #   - key: "PROCESSING"
+    #     value: "PROCESSING"
+    #   - key: "OPEN"
+    #     value: "OPEN"
+
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to id of the action.
+
+  - name: "status"
+    key: "status"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "CLOSED"
+        value: "CLOSED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+      
+
+    errorText: "Please select a field"
+    required: false
+    summary: This attribute refers to status of the settlement.
+  
+  # OPEN,PROCESSING,INFO_REQUESTED,INFO_PROVIDED, RESOLVED
+  - name: "description_code"
+    key: "actions_description.code"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "INFO_REQUESTED"
+        value: "INFO_REQUESTED"
+      - key: "INFO_PROVIDED"
+        value: "INFO_PROVIDED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute is description_code.
+
+  - name: "short_desc"
+    key: "actions_description.short_desc"
+    type: "text"
+    errorText: "short_desc is required"
+    defaultValue: "OPEN"
+    required: true
+    summary: This attribute is short_desc.
+  
+  - name: "action_by"
+    key: "action_by"
+   
+    
+    defaultValue: "NP1"
+    required: true
+    summary: This attribute is Action_by.
+  
+  - name: "actor_name"
+    key: "actor_detail.name"
+    type: "text"
+    
+    defaultValue: "Sam Manuel"
+    required: false
+    summary: This attribute is Actor_Name.
+
+  - name: "send_resolution"
+    key: "send_resolution"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "Proposed"
+        value: "proposed"
+      - key: "Replacement"
+        value: "replacement"
+      - key: "Refund"
+        value: "refund"
+      - key: "false"
+        value: false
+  
+  - name: "info_requested_code"
+    key: "actions_description.name"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "INFO0001"
+        value: "INFO0001"
+      - key: "INFO0002"
+        value: "INFO0002"
+      - key: "INFO0003"
+        value: "INFO0003"
+      - key: "false"
+        value: false
+
+on_issue9:
+  - name: "action_id"
+    key: "id"
+    type: "text"
+    defaultValue: "0"
+  
+    # defaultOptions:
+    #   - key: "PROCESSING"
+    #     value: "PROCESSING"
+    #   - key: "OPEN"
+    #     value: "OPEN"
+
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to id of the action.
+
+  - name: "status"
+    key: "status"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "CLOSED"
+        value: "CLOSED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+      
+
+    errorText: "Please select a field"
+    required: false
+    summary: This attribute refers to status of the settlement.
+  
+  # OPEN,PROCESSING,INFO_REQUESTED,INFO_PROVIDED, RESOLVED
+  - name: "description_code"
+    key: "actions_description.code"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "INFO_REQUESTED"
+        value: "INFO_REQUESTED"
+      - key: "INFO_PROVIDED"
+        value: "INFO_PROVIDED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute is description_code.
+
+  - name: "short_desc"
+    key: "actions_description.short_desc"
+    type: "text"
+    errorText: "short_desc is required"
+    defaultValue: "OPEN"
+    required: true
+    summary: This attribute is short_desc.
+  
+  - name: "action_by"
+    key: "action_by"
+    
+    defaultValue: "NP1"
+    required: true
+    summary: This attribute is Action_by.
+  
+  - name: "actor_name"
+    key: "actor_detail.name"
+    type: "text"
+    
+    defaultValue: "Sam Manuel"
+    required: false
+    summary: This attribute is Actor_Name.
+
+  - name: "send_resolution"
+    key: "send_resolution"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "Proposed"
+        value: "proposed"
+      - key: "Replacement"
+        value: "replacement"
+      - key: "Refund"
+        value: "refund"
+      - key: "false"
+        value: false
+
+  - name: "info_requested_code"
+    key: "actions_description.name"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "INFO0001"
+        value: "INFO0001"
+      - key: "INFO0002"
+        value: "INFO0002"
+      - key: "INFO0003"
+        value: "INFO0003"
+      - key: "false"
+        value: false
+
+on_issue10:
+  - name: "action_id"
+    key: "id"
+    type: "text"
+    defaultValue: "0"
+  
+    # defaultOptions:
+    #   - key: "PROCESSING"
+    #     value: "PROCESSING"
+    #   - key: "OPEN"
+    #     value: "OPEN"
+
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute refers to id of the action.
+
+  - name: "status"
+    key: "status"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "CLOSED"
+        value: "CLOSED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+      
+
+    errorText: "Please select a field"
+    required: false
+    summary: This attribute refers to status of the settlement.
+  
+  # OPEN,PROCESSING,INFO_REQUESTED,INFO_PROVIDED, RESOLVED
+  - name: "description_code"
+    key: "actions_description.code"
+    type: "select"
+    defaultValue: "OPEN"
+
+    defaultOptions:
+      - key: "OPEN"
+        value: "OPEN"
+      - key: "INFO_REQUESTED"
+        value: "INFO_REQUESTED"
+      - key: "INFO_PROVIDED"
+        value: "INFO_PROVIDED"
+      - key: "RESOLVED"
+        value: "RESOLVED"
+      - key: "PROCESSING"
+        value: "PROCESSING"
+    errorText: "Please select a field"
+    required: true
+    summary: This attribute is description_code.
+
+  - name: "short_desc"
+    key: "actions_description.short_desc"
+    type: "text"
+    errorText: "short_desc is required"
+    defaultValue: "OPEN"
+    required: true
+    summary: This attribute is short_desc.
+  
+  - name: "action_by"
+    key: "action_by"
+   
+    
+    defaultValue: "NP1"
+    required: true
+    summary: This attribute is Action_by.
+  
+  - name: "actor_name"
+    key: "actor_detail.name"
+    type: "text"
+    
+    defaultValue: "Sam Manuel"
+    required: false
+    summary: This attribute is Actor_Name.
+
+  - name: "send_resolution"
+    key: "send_resolution"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "Proposed"
+        value: "proposed"
+      - key: "Replacement"
+        value: "replacement"
+      - key: "Refund"
+        value: "refund"
+      - key: "false"
+        value: false
+
+  - name: "info_requested_code"
+    key: "actions_description.name"
+    type: "select"
+    defaultValue: false
+    defaultOptions:
+      - key: "INFO0001"
+        value: "INFO0001"
+      - key: "INFO0002"
+        value: "INFO0002"
+      - key: "INFO0003"
+        value: "INFO0003"
+      - key: "false"
+        value: false
+      

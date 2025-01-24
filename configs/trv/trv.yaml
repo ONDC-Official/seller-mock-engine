@@ -1,0 +1,17 @@
+flows:        
+  - summary: Metro seller main flow
+    id: metro-seller-flow-1
+    shouldDispaly: true
+    version:
+      - 2.0.0
+      - 2.1.0
+    input:
+      $ref: ./metro-seller-flow-1/input.yaml
+    calls:
+      $ref: ./metro-seller-flow-1/protocolCalls.yaml
+    config_selector:
+      $ref: ./metro-seller-flow-1/selector.yaml
+    
+    # default_payload:
+    #   $ref: ./configs/metro-seller-flow-1/default_payload.yaml
+      

@@ -3,7 +3,7 @@ import yaml from "yaml";
 import path from "path";
 import $RefParser from "@apidevtools/json-schema-ref-parser";
 import axios from "axios";
-import  logger from "./logger";
+import  logger from "./src/utils/logger"
 
 
 
@@ -14,10 +14,12 @@ class ConfigLoader {
   }
 
   async init() {
-    try {      
+    try {
+      
+      
       if (process.env.localConfig === "true") {
         const config = yaml.parse(
-          fs.readFileSync(path.join(__dirname, "../../configs/igm/index.yaml"), "utf8")
+          fs.readFileSync(path.join(__dirname, "./configs/igm/index.yaml"), "utf8")
         );
         
         const schema = await $RefParser.dereference(config);
@@ -26,6 +28,7 @@ class ConfigLoader {
         return schema
 
       }else{
+
       const url = process.env.CONFIG_URL_MAPPER;
 
       if (!url) {

@@ -1,0 +1,125 @@
+issue:
+  type: "issue"
+  category: "reciever"
+  target: "NP"
+  executed: false
+  shouldRender: true
+  config: "issue" #name of the call
+  nextRequest: "on_issue"
+  preRequest: issue
+  isCollapsed: false
+  current: issue
+  # default_payload:
+  #   $ref: ./default_payload.yaml#/settle
+
+on_issue:
+  type: "on_issue"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: true
+  config: "on_issue" #name of the call
+  nextRequest: "on_issue3"
+  preRequest: issue
+  isCollapsed: false
+  current: on_issue
+
+on_issue3:
+  type: "on_issue"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_issue3" #name of the call
+  nextRequest: "on_issue4"
+  preRequest: on_issue
+  isCollapsed: false
+  current: on_issue3
+
+on_issue4:
+  type: "on_issue"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_issue4" #name of the call
+  nextRequest: "on_issue5"
+  preRequest: on_issue3
+  isCollapsed: false
+  current: on_issue4
+
+on_issue5:
+  type: "on_issue"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_issue5" #name of the call
+  nextRequest: "on_issue6"
+  preRequest: on_issue4
+  isCollapsed: false
+  current: on_issue5
+
+on_issue6:
+  type: "on_issue"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_issue6" #name of the call
+  nextRequest: "on_issue7"
+  preRequest: on_issue5
+  isCollapsed: false
+  current: on_issue6
+
+on_issue7:
+  type: "on_issue"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_issue7" #name of the call
+  nextRequest: "on_issue8"
+  preRequest: on_issue6
+  isCollapsed: false
+  current: on_issue7
+
+on_issue8:
+  type: "on_issue"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_issue8" #name of the call
+  nextRequest: "on_issue9"
+  preRequest: on_issue7
+  isCollapsed: false
+  current: on_issue8
+
+on_issue9:
+  type: "on_issue"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_issue9" #name of the call
+  nextRequest: "on_issue10"
+  preRequest: on_issue8
+  isCollapsed: false
+  current: on_issue9
+
+on_issue10:
+  type: "on_issue"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_issue10" #name of the call
+  nextRequest: "on_issue11"
+  preRequest: on_issue9
+  isCollapsed: false
+  current: on_issue10
+
+
+
+

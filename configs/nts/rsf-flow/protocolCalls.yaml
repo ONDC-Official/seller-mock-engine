@@ -1,0 +1,177 @@
+settle:
+  type: "settle"
+  category: "reciever"
+  target: "NP"
+  executed: false
+  shouldRender: true
+  config: "settle" #name of the call
+  nextRequest: "on_settle_selector"
+  preRequest: settle
+  isCollapsed: false
+  current: settle
+  # default_payload:
+  #   $ref: ./default_payload.yaml#/settle
+
+on_settle_selector:
+  type: "on_selector"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_settle_selector" #name of the call
+  nextRequest: "on_settle"
+  preRequest: settle
+  isCollapsed: false
+  current: on_settle_selector
+
+
+on_settle:
+  type: "on_settle"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_settle" #name of the call
+  nextRequest: "report"
+  preRequest: settle
+  isCollapsed: false
+  isSkipable:
+   - condition: session.settle_condition === "on_settle_provider"
+     nextRequest: "on_settle_provider"
+   - condition: session.settle_condition === "NIL"
+     nextRequest: "on_settle_nil"
+  current: on_settle
+
+on_settle_provider:
+  type: "on_settle"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_settle_provider" #name of the call
+  nextRequest: "report"
+  preRequest: settle
+  isCollapsed: false
+  current: on_settle_provider
+
+
+on_settle_nil:
+  type: "on_settle"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_settle_nil" #name of the call
+  nextRequest: "report"
+  preRequest: settle
+  isCollapsed: false
+  current: on_settle_nil
+
+report:
+  type: "report"
+  category: "reciever"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "report" #name of the call
+  nextRequest: "on_report"
+  preRequest: on_settle
+  isCollapsed: false
+  current: report
+  # default_payload:
+  #   $ref: ./default_payload.yaml#/report
+
+on_report:
+  type: "on_report"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "on_report" #name of the call
+  nextRequest: "recon_selector"
+  # nextRequest: "on_recon"
+  preRequest: report
+  isCollapsed: false
+  current: on_report
+  # default_payload:
+  #   $ref: ./default_payload.yaml#/on_report
+
+# on_recon:
+#   type: "on_recon"
+#   category: "sender"
+#   target: "NP"
+#   executed: false
+#   shouldRender: false
+#   config: "on_recon" #name of the call
+#   nextRequest: "recon"
+#   preRequest: on_report
+#   isCollapsed: false
+#   current: on_recon
+
+# recon:
+#   type: "recon"
+#   category: "reciever"
+#   target: "NP"
+#   executed: false
+#   shouldRender: false
+#   config: "recon" #name of the call
+#   nextRequest: "recon"
+#   preRequest: on_report
+#   isCollapsed: false
+#   current: recon
+
+
+recon_selector:
+  type: "on_selector"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "recon_selector" #name of the call
+  nextRequest: "recon"
+  preRequest: on_report
+  isCollapsed: false
+  current: recon_selector
+
+
+
+recon:
+  type: "recon"
+  target: "NP"
+  category: "reciever"
+  executed: false
+  shouldRender: false
+  config: "recon" #name of the call
+  nextRequest: "on_recon"
+  preRequest: on_report
+  isCollapsed: false
+  current: recon
+  isSkipable:
+   - condition: session.settle_condition_recon === "recon"
+     nextRequest: "recon"
+   - condition: session.settle_condition_recon === "recon_send"
+     nextRequest: "recon_send"
+
+on_recon:
+  type: "on_recon"
+  target: "NP"
+  category: "sender"
+  executed: false
+  shouldRender: false
+  config: "on_recon" #name of the call
+  nextRequest: "on_recon"
+  preRequest: recon
+  isCollapsed: false
+  current: on_recon
+
+recon_send:
+  type: "recon"
+  category: "sender"
+  target: "NP"
+  executed: false
+  shouldRender: false
+  config: "recon_send" #name of the call
+  nextRequest: "recon_send"
+  preRequest: recon
+  isCollapsed: false
+  current: recon_send

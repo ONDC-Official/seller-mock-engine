@@ -1,0 +1,26 @@
+flows:        
+  - summary: IGM seller flow
+    id: igm-flow
+    shouldDispaly: true
+    version:
+      - 2.0.0
+      - 2.1.0
+    input:
+      $ref: ./configs/igm/igm-flow/input.yaml
+    calls:
+      $ref: ./configs/igm/igm-flow/protocolCalls.yaml
+    config_selector:
+      $ref: ./configs/igm/igm-flow/selector.yaml
+
+  - summary: IGM seller flow
+    id: igm-reverse-flow
+    shouldDispaly: true
+    version:
+      - 2.0.0
+      - 2.1.0
+    input:
+      $ref: ./configs/igm/igm-reverse-flow/input.yaml
+    calls:
+      $ref: ./configs/igm/igm-reverse-flow/protocolCalls.yaml
+    config_selector:
+      $ref: ./configs/igm/igm-reverse-flow/selector.yaml

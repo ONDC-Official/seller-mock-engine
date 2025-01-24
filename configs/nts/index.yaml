@@ -1,0 +1,14 @@
+flows:        
+  - summary: Rsf seller flow
+    id: nts-services
+    shouldDispaly: true
+    version:
+      - 2.0.0
+      - 2.1.0
+    input:
+      $ref: ./rsf-flow/input.yaml
+    calls:
+      $ref: ./rsf-flow/protocolCalls.yaml
+    config_selector:
+      $ref: ./rsf-flow/selector.yaml
+      
