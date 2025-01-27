@@ -10,7 +10,8 @@
         "fis": "nodemon src/app.ts FIS",
         "trv": "nodemon src/app.ts TRV",
         "stop": "kill $(lsof -t -i:7702)",
-        "restart": "npm run stop && npm run fis"
+        "restart": "npm run stop && npm run fis",
+        "build": "tsc"
     },
     "keywords": [],
     "author": "",
@@ -46,6 +47,8 @@
         "@types/uuid": "^10.0.0",
         "@types/winston": "^2.4.4",
         "eslint": "^8.36.0",
-        "nodemon": "^2.0.22"
+        "nodemon": "^2.0.22",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.7.3"
     }
 }
