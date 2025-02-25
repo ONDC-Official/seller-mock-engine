@@ -559,7 +559,8 @@ router.post("/mapper/:config", async (req, res) => {
       { uuid: logID }
     );
     logger.error("Error while sending request  -  ", e?.response?.data || e);
-    return res.status(500).send({ message: "Error while sending request", e });
+
+    return res.status(500).send({ message: e?.response?.data?.message?.error?.message || "Error while sending request", e });
   }
 });
 
