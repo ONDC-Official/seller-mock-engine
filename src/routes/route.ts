@@ -317,6 +317,7 @@ router.post("/mapper/unsolicited", async (req, res) => {
 // baki calls k liye protocol server se jo responses atey h wo idhar atey h
 // on_search || on_select for buyer case if async mode
 router.post("/mapper/ondc", async (req, res) => {
+ try{
   const logID = uuidv4();
   logger.info(
     `${req.body?.updatedSession?.transaction_id} - /mapper/ondc api controller`,
@@ -356,10 +357,17 @@ router.post("/mapper/ondc", async (req, res) => {
     { uuid: logID }
   );
   res.send({ success: true });
+}
+  catch (e: any) {
+    logger.error(
+      `${e.messaage} - /mapper/ondc api controller executed`
+    );
+  }
 });
 
 // sandbox ui -> buyer mock
 router.post("/mapper/:config", async (req, res) => {
+  try{
   const logID = uuidv4();
   logger.info(`${req.body?.transactionId} - /mapper/:config api controller`, {
     uuid: logID,
@@ -388,7 +396,8 @@ router.post("/mapper/:config", async (req, res) => {
   }
 
   // payload = {...payload, ...session.deafult_payload[config]}
-  payload = { ...payload, ...session.protocolCalls[config].default_payload };
+  
+  // payload = { ...payload, ...session.protocolCalls[config].default_payload }; // default payload no longer being used 
 
   // handle form
   if (session.protocolCalls[config].type === "form") {
@@ -562,9 +571,32 @@ router.post("/mapper/:config", async (req, res) => {
 
     return res.status(500).send({ message: e?.response?.data?.message?.error?.message || "Error while sending request", e });
   }
+}
+  catch (e: any) {
+    logger.error(
+      ` /mapper/:config - Error while sending request  -  ${
+        e?.response?.data || e
+      }`
+    );
+
+}
 });
 
-// use nhi hota
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// not being used
 router.post("/submissionId", async (req, res) => {
   const logID = uuidv4();
   logger.info(`/submissionId api controller`, { uuid: logID });
