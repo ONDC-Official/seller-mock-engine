@@ -1,6 +1,6 @@
 services:
-  mock-server:
-    container_name: ${CONTAINER_NAME:-seller-mock-engine}
+ seller-mock-engine:
+    container_name: ${SERVICE_NAME:-seller-mock-engine}
     restart: always
     build: .
     ports:
