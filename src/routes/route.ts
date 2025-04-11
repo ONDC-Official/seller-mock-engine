@@ -44,7 +44,7 @@ router.post("/mapper/session", (req, res) => {
     uuid: logID,
   });
 
-  if (!country || !cityCode || !transaction_id || !configName) {
+  if ( !transaction_id || !configName) {
     logger.error(
       "validations failed  country || cityCode || transaction_id || configName missing",
       { uuid: logID }

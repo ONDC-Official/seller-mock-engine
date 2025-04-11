@@ -1,0 +1,7 @@
+services:
+ seller-mock-engine:
+    container_name: ${SERVICE_NAME:-seller-mock-engine}
+    restart: always
+    build: .
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
