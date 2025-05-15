@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const express = require("express");
 const log = require("./utils/logger");
 const app = express();
@@ -22,12 +24,13 @@ else{
 async function startUp(file) {
   await config.loadConfig(file);
   const server = config.getServer();
+  const PORT = process.env.PORT || server.port
 
   app.use(express.json());
   const logger = log.init();
 
-  app.listen(server.port, () => {
-    logger.info(`This app is running on port number : ${server.port}`);
+  app.listen(PORT, () => {
+    logger.info(`This app is running on port number : ${PORT}`);
   });
   app.use(router);
 }
