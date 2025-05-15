@@ -1,4 +1,5 @@
 import express from "express";
+import { healthCheckAPI } from "../controller/health.controller";
 const router = express.Router();
 import { v4 as uuidv4 } from "uuid";
 import { onRequest } from "../services/service";
@@ -638,6 +639,14 @@ router.get("/restart", (req, res) => {
     logger.info("/restart - Content appended to file!");
   });
   // });
+});
+
+// route for check halth of the service
+router.get("/health", healthCheckAPI);
+
+// self health check route
+router.get("/health-self", (req, res) => {
+  res.status(200).send(`STATUS:UP,TIMESTAMP:${new Date().toISOString()}`);
 });
 
 // router.all("/*", (req, res) => {
