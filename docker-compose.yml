@@ -1,11 +1,7 @@
-version: "3.8"
-
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: ${CONTAINER_NAME:-seller-mock-engine}
+    image: 577638354424.dkr.ecr.ap-south-1.amazonaws.com/fis-seller-mock-engine:latest
+    container_name: seller-mock-engine
     ports:
       - "${PORT:-3000}:${PORT:-3000}"
     env_file:
