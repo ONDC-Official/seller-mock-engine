@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     image: 577638354424.dkr.ecr.ap-south-1.amazonaws.com/fis-seller-mock-engine:latest  # Will be dynamically updated by Jenkins
-    container_name: ${CONTAINER_NAME:-fis-seller-mock-engine}
+    container_name: ${CONTAINER_NAME:-trv-seller-mock-engine}
     ports:
       - "${PORT:-3000}:${PORT:-3000}"
     env_file:
