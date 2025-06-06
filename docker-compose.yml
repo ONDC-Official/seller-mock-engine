@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   app:
     image: 577638354424.dkr.ecr.ap-south-1.amazonaws.com/fis-seller-mock-engine:latest  # Will be dynamically updated by Jenkins
