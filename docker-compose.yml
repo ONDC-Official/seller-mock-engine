@@ -1,7 +1,7 @@
 services:
- seller-mock-engine:
+  app:
+    image: 577638354424.dkr.ecr.ap-south-1.amazonaws.com/dev/igm-seller-mock-engine:latest  # Will be dynamically updated by Jenkins
     container_name: ${SERVICE_NAME:-seller-mock-engine}
-    restart: always
-    build: .
     ports:
       - "${PORT:-3000}:${PORT:-3000}"
+    restart: always
