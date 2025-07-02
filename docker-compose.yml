@@ -1,10 +1,7 @@
-version: "3.8"
-
+version: '3.8'
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: 577638354424.dkr.ecr.ap-south-1.amazonaws.com/staging/fis-seller-mock-engine:latest  # Will be dynamically updated by Jenkins
     container_name: ${CONTAINER_NAME:-seller-mock-engine}
     ports:
       - "${PORT:-3000}:${PORT:-3000}"
