@@ -1,7 +1,10 @@
+version: "3.8"
 services:
- seller-mock-engine:
+  app:
+    image: 577638354424.dkr.ecr.ap-south-1.amazonaws.com/staging/igm-selller-mock-engine:latest
     container_name: ${SERVICE_NAME:-seller-mock-engine}
-    restart: always
-    build: .
     ports:
       - "${PORT:-3000}:${PORT:-3000}"
+    restart: always
+    env_file:
+      - .env
